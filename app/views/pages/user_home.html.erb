@@ -1,6 +1,7 @@
 <%= render 'pages/partials/sidebar' %>
 <main class="flex-1 p-8 ml-64">
   <%= turbo_frame_tag 'content' do %>
-    <%= render params[:partial] ? "pages/partials/dash_#{params[:partial]}" : 'pages/partials/dash_home' %>
+    <%= render "shared/alerts_notices" %>
+    <%= render 'pages/partials/dash_home' %>
   <% end %>
 </main>
