@@ -1,0 +1,29 @@
+<%= turbo_frame_tag 'content' do %>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Pacientes -->
+    <div class="p-6 bg-white rounded-lg shadow-lg">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Pacientes</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="block p-4 bg-cyan-50 rounded-lg shadow-sm hover:bg-cyan-100">Paciente 1</a></li>
+        <li><a href="#" class="block p-4 bg-cyan-50 rounded-lg shadow-sm hover:bg-cyan-100">Paciente 2</a></li>
+        <li><a href="#" class="block p-4 bg-cyan-50 rounded-lg shadow-sm hover:bg-cyan-100">Paciente 3</a></li>
+      </ul>
+      <div class="mt-4">
+        <a href="#" class="inline-block px-6 py-2 text-lg font-medium text-white bg-cyan-600 rounded-lg hover:bg-cyan-500">Criar</a>
+      </div>
+    </div>
+
+    <!-- Prontuários -->
+    <div class="p-6 bg-white rounded-lg shadow-lg">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Prontuários</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="block p-4 bg-cyan-50 rounded-lg shadow-sm hover:bg-cyan-100">Prontuário 1</a></li>
+        <li><a href="#" class="block p-4 bg-cyan-50 rounded-lg shadow-sm hover:bg-cyan-100">Prontuário 2</a></li>
+        <li><a href="#" class="block p-4 bg-cyan-50 rounded-lg shadow-sm hover:bg-cyan-100">Prontuário 3</a></li>
+      </ul>
+      <div class="mt-4">
+        <a href="#" class="inline-block px-6 py-2 text-lg font-medium text-white bg-cyan-600 rounded-lg hover:bg-cyan-500">Criar</a>
+      </div>
+    </div>
+  </div>
+<% end %>

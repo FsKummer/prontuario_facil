@@ -1,0 +1,16 @@
+<aside class="w-64 bg-cyan-600 text-white flex flex-col h-screen fixed left-0">
+  <div class="p-6 text-center">
+    <h2 class="text-xl font-bold truncate">Bem vindo,</h2>
+    <h2 class="text-xl font-bold truncate"><%= @user.email %></h2>
+  </div>
+  <nav class="flex-1 px-4 space-y-2">
+    <a href="/?partial=home" class="block px-4 py-2 text-lg font-medium rounded-lg hover:bg-cyan-700" data-turbo-frame="content">Home</a>
+    <a href="/?partial=prontuarios" class="block px-4 py-2 text-lg font-medium rounded-lg hover:bg-cyan-700" data-turbo-frame="content">Prontuários</a>
+    <a href="/?partial=pacientes" class="block px-4 py-2 text-lg font-medium rounded-lg hover:bg-cyan-700" data-turbo-frame="content">Pacientes</a>
+    <a href="/?partial=reportes" class="block px-4 py-2 text-lg font-medium rounded-lg hover:bg-cyan-700" data-turbo-frame="content">Reportes</a>
+  </nav>
+  <div class="px-4 py-6">
+    <%= link_to "Sair", destroy_user_session_path, data: { turbo_method: :delete },
+          class: "block w-full px-4 py-2 text-lg font-medium text-white bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-lg transition-all duration-200 hover:from-cyan-400 hover:to-cyan-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500" %>
+  </div>
+</aside>
