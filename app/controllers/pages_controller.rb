@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_user, only: :home
+  before_action :ensure_user_logged_in
   include Constants::PagesControllerConstants
 
   def home
@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   private
 
   def render_user_dashboard
+    set_user_prontuaries
     respond_to do |format|
       if turbo_content_request?
         begin
@@ -34,5 +35,14 @@ class PagesController < ApplicationController
 
   def turbo_content_request?
     turbo_frame_request? && turbo_frame_request_id == USER_DASHBOARD_TURBO_FRAME
+  end
+
+  def set_user_prontuaries
+    @prontuarios ||= @user.prontuarios
+  end
+
+  def ensure_user_logged_in
+    set_user
+    render("home") unless @user
   end
 end

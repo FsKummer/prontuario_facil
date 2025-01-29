@@ -1,0 +1,15 @@
+<%= turbo_frame_tag 'content' do %>
+  <div class="p-6 bg-white rounded-lg shadow-lg">
+    <h3 class="text-2xl font-bold text-gray-800 mb-4">Novo Prontuário</h3>
+    <%= form_with model: @prontuario, url: prontuarios_path, method: :post, data: { turbo_frame: 'content' } do |f| %>
+      <div class="mb-4">
+        <%= f.label :nome, "Nome", class: "block text-gray-700 font-bold mb-2" %>
+        <%= f.text_field :nome, class: "w-full p-2 border rounded-lg" %>
+      </div>
+      <div class="flex space-x-4">
+        <%= f.submit "Salvar", class: "px-6 py-2 text-lg font-medium text-white bg-cyan-600 rounded-lg hover:bg-cyan-500" %>
+        <%= link_to "Cancelar", prontuarios_path, data: { turbo_frame: 'content' }, class: "px-6 py-2 text-lg font-medium text-gray-600 bg-gray-200 rounded-lg hover:bg-gray-300" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
