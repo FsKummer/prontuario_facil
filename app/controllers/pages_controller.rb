@@ -1,11 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_user, only: :home
-
-  USER_DASHBOARD_TURBO_FRAME = "content"
-  NOT_IMPLEMENTED_MESSAGE = "Ops, ainda não foi implementado"
-  USER_HOME_PARTIAL = "user_home"
-  DASHBOARD_BASE_PATH = "pages/partials/dash_"
-  ALLOWED_PARTIALS = %w[home pacientes prontuarios reportes].freeze
+  include Constants::PagesControllerConstants
 
   def home
     @user ? render_user_dashboard : render("home")
